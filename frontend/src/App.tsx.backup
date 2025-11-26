@@ -1,0 +1,430 @@
+import { useState, useEffect } from 'react';
+import {
+  listYears,
+  listMonths,
+  listFiles,
+  updateCredentials as updateCredentialsAPI,
+  downloadEvent,
+  checkDownloadStatus,
+  deleteDownload,
+  getLocalFileUrl,
+  type S3File
+} from './services/s3';
+import './App.css';
+
+function App() {
+  const [years, setYears] = useState<string[]>([]);
+  const [selectedYear, setSelectedYear] = useState<string | null>(null);
+  const [months, setMonths] = useState<string[]>([]);
+  const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
+  const [files, setFiles] = useState<S3File[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [showCredentialsForm, setShowCredentialsForm] = useState(false);
+  const [credentialsInput, setCredentialsInput] = useState('');
+  const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
+  const [downloadedEvents, setDownloadedEvents] = useState<Set<string>>(new Set());
+  const [downloadingEvents, setDownloadingEvents] = useState<Set<string>>(new Set());
+  const [continuationToken, setContinuationToken] = useState<string | null>(null);
+  const [hasMore, setHasMore] = useState(false);
+
+  // Check if error is credentials-related
+  const isCredentialsError = (err: unknown): boolean => {
+    const message = err instanceof Error ? err.message : String(err);
+    return message.includes('ExpiredToken') ||
+      message.includes('InvalidAccessKeyId') ||
+      message.includes('SignatureDoesNotMatch') ||
+      message.includes('403') ||
+      message.includes('401');
+  };
+
+  // Parse AWS credentials from export format
+  const parseCredentials = (input: string): { accessKeyId: string; secretAccessKey: string; sessionToken?: string } | null => {
+    const lines = input.trim().split('\n');
+    const creds: any = {};
+
+    for (const line of lines) {
+      const match = line.match(/export\s+AWS_(\w+)="([^"]+)"/);
+      if (match) {
+        const [, key, value] = match;
+        if (key === 'ACCESS_KEY_ID') creds.accessKeyId = value;
+        if (key === 'SECRET_ACCESS_KEY') creds.secretAccessKey = value;
+        if (key === 'SESSION_TOKEN') creds.sessionToken = value;
+      }
+    }
+
+    if (creds.accessKeyId && creds.secretAccessKey) {
+      return creds;
+    }
+    return null;
+  };
+
+  // Update credentials on backend and reload
+  const updateCredentials = async () => {
+    const parsed = parseCredentials(credentialsInput);
+    if (!parsed) {
+      alert('Invalid credentials format. Please paste the export commands.');
+      return;
+    }
+
+    try {
+      await updateCredentialsAPI(parsed.accessKeyId, parsed.secretAccessKey, parsed.sessionToken);
+      setShowCredentialsForm(false);
+      setCredentialsInput('');
+      window.location.reload();
+    } catch (err) {
+      alert('Failed to update credentials: ' + (err instanceof Error ? err.message : 'Unknown error'));
+    }
+  };
+
+  // Load years on mount and auto-select most recent
+  useEffect(() => {
+    const loadYears = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const yearList = await listYears();
+        setYears(yearList);
+
+        // Auto-select most recent year
+        if (yearList.length > 0) {
+          setSelectedYear(yearList[0]);
+        }
+      } catch (err) {
+        const errorMsg = `Failed to load years: ${err instanceof Error ? err.message : 'Unknown error'}`;
+        setError(errorMsg);
+
+        // Show credentials form if it's a credentials error
+        if (isCredentialsError(err)) {
+          setShowCredentialsForm(true);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadYears();
+  }, []);
+
+  // Load months when year is selected and auto-select most recent
+  useEffect(() => {
+    if (!selectedYear) {
+      setMonths([]);
+      setSelectedMonth(null);
+      return;
+    }
+
+    const loadMonths = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const monthList = await listMonths(selectedYear);
+        setMonths(monthList);
+
+        // Auto-select most recent month
+        if (monthList.length > 0) {
+          setSelectedMonth(monthList[0]);
+        }
+      } catch (err) {
+        const errorMsg = `Failed to load months: ${err instanceof Error ? err.message : 'Unknown error'}`;
+        setError(errorMsg);
+
+        if (isCredentialsError(err)) {
+          setShowCredentialsForm(true);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadMonths();
+  }, [selectedYear]);
+
+  // Load files when month is selected (initial load)
+  useEffect(() => {
+    if (!selectedYear || !selectedMonth) {
+      setFiles([]);
+      setContinuationToken(null);
+      setHasMore(false);
+      return;
+    }
+
+    const loadFiles = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const result = await listFiles(selectedYear, selectedMonth);
+        setFiles(result.files);
+        setContinuationToken(result.nextContinuationToken);
+        setHasMore(result.isTruncated);
+      } catch (err) {
+        const errorMsg = `Failed to load files: ${err instanceof Error ? err.message : 'Unknown error'}`;
+        setError(errorMsg);
+
+        if (isCredentialsError(err)) {
+          setShowCredentialsForm(true);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadFiles();
+  }, [selectedYear, selectedMonth]);
+
+  // Load more files
+  const loadMoreFiles = async () => {
+    if (!selectedYear || !selectedMonth || !continuationToken) return;
+
+    setLoading(true);
+    try {
+      const result = await listFiles(selectedYear, selectedMonth, continuationToken);
+      setFiles(prev => [...prev, ...result.files]);
+      setContinuationToken(result.nextContinuationToken);
+      setHasMore(result.isTruncated);
+    } catch (err) {
+      setError(`Failed to load more files: ${err instanceof Error ? err.message : 'Unknown error'}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const formatFileSize = (bytes: number): string => {
+    if (bytes === 0) return '0 B';
+    const k = 1024;
+    const sizes = ['B', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return `${(bytes / Math.pow(k, i)).toFixed(2)} ${sizes[i]}`;
+  };
+
+  const getFileIcon = (type: S3File['type']): string => {
+    switch (type) {
+      case 'video': return '🎥';
+      case 'json': return '📄';
+      case 'json.gz': return '📦';
+      case 'jpg': return '🖼️';
+      default: return '📁';
+    }
+  };
+
+  const groupFilesByPrefix = (files: S3File[]): Map<string, S3File[]> => {
+    const groups = new Map<string, S3File[]>();
+
+    files.forEach(file => {
+      // Extract the base filename (without extension)
+      const parts = file.key.split('/');
+      const filename = parts[parts.length - 1];
+      const match = filename.match(/^(.+?)(?:_OnDevice|_eventDTO|_feedback)?\.(?:mp4|json|json\.gz|jpg)$/);
+      const prefix = match ? match[1] : filename;
+
+      if (!groups.has(prefix)) {
+        groups.set(prefix, []);
+      }
+      groups.get(prefix)!.push(file);
+    });
+
+    return groups;
+  };
+
+  const getMonthName = (monthNum: string): string => {
+    return new Date(2000, parseInt(monthNum) - 1).toLocaleString('default', { month: 'long' });
+  };
+
+  const fileGroups = groupFilesByPrefix(files);
+
+  return (
+    <div className="app">
+      <header className="header">
+        <h1>🚪 Geoffrey - Digital Doorman</h1>
+        <p>Browse user-submitted feedback from S3</p>
+      </header>
+
+      <main className="main">
+        {error && (
+          <div className="error">
+            <strong>Error:</strong> {error}
+            {isCredentialsError(error) && (
+              <button
+                className="error-action-btn"
+                onClick={() => setShowCredentialsForm(true)}
+              >
+                Update Credentials
+              </button>
+            )}
+          </div>
+        )}
+
+        {showCredentialsForm && (
+          <div className="modal-overlay" onClick={() => setShowCredentialsForm(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <h2>Update AWS Credentials</h2>
+              <p>Paste your AWS credentials in export format:</p>
+              <textarea
+                className="credentials-input"
+                placeholder={`export AWS_ACCESS_KEY_ID="..."\nexport AWS_SECRET_ACCESS_KEY="..."\nexport AWS_SESSION_TOKEN="..."`}
+                value={credentialsInput}
+                onChange={(e) => setCredentialsInput(e.target.value)}
+                rows={6}
+              />
+              <div className="modal-actions">
+                <button className="btn-primary" onClick={updateCredentials}>
+                  Update & Reload
+                </button>
+                <button className="btn-secondary" onClick={() => setShowCredentialsForm(false)}>
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="controls">
+          <div className="current-date">
+            <span className="date-label">Viewing:</span>
+            <span className="date-value">
+              {selectedYear && selectedMonth
+                ? `${getMonthName(selectedMonth)} ${selectedYear}`
+                : 'Loading...'}
+            </span>
+          </div>
+          <div className="control-buttons">
+            <button
+              className="date-picker-button"
+              onClick={() => setShowDatePicker(!showDatePicker)}
+            >
+              📅 Change Date
+            </button>
+            <button
+              className="credentials-button"
+              onClick={() => setShowCredentialsForm(true)}
+              title="Update AWS credentials"
+            >
+              🔑 Credentials
+            </button>
+          </div>
+        </div>
+
+        {showDatePicker && (
+          <div className="date-picker">
+            <div className="date-picker-section">
+              <h3>Year</h3>
+              <div className="date-picker-buttons">
+                {years.map(year => (
+                  <button
+                    key={year}
+                    className={`date-picker-btn ${selectedYear === year ? 'active' : ''}`}
+                    onClick={() => {
+                      setSelectedYear(year);
+                      setSelectedMonth(null);
+                    }}
+                  >
+                    {year}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {selectedYear && months.length > 0 && (
+              <div className="date-picker-section">
+                <h3>Month</h3>
+                <div className="date-picker-buttons">
+                  {months.map(month => (
+                    <button
+                      key={month}
+                      className={`date-picker-btn ${selectedMonth === month ? 'active' : ''}`}
+                      onClick={() => {
+                        setSelectedMonth(month);
+                        setShowDatePicker(false);
+                      }}
+                    >
+                      {getMonthName(month)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        <div className="events-section">
+          <h2>
+            📂 Events {selectedYear && selectedMonth && `(${fileGroups.size} total)`}
+          </h2>
+          {loading ? (
+            <div className="loading">Loading events...</div>
+          ) : fileGroups.size === 0 ? (
+            <div className="empty">No events found for this period</div>
+          ) : (
+            <div className="event-list">
+              {Array.from(fileGroups.entries()).map(([prefix, groupFiles]) => {
+                const video = groupFiles.find(f => f.type === 'video');
+                const thumbnail = groupFiles.find(f => f.type === 'jpg');
+                const feedback = groupFiles.find(f => f.key.includes('feedback'));
+                const eventData = groupFiles.find(f => f.key.includes('eventDTO'));
+
+                return (
+                  <div key={prefix} className="event-card">
+                    <div className="event-header">
+                      <h3 className="event-title">
+                        {thumbnail && '🖼️'} {video && '🎥'} Event
+                      </h3>
+                      <span className="event-time">
+                        {video?.lastModified.toLocaleString() || 'Unknown time'}
+                      </span>
+                    </div>
+
+                    <div className="event-id">{prefix}</div>
+
+                    <div className="event-files">
+                      {video && (
+                        <div className="event-file-badge video">
+                          🎥 Video ({formatFileSize(video.size)})
+                        </div>
+                      )}
+                      {thumbnail && (
+                        <div className="event-file-badge thumbnail">
+                          🖼️ Thumbnail
+                        </div>
+                      )}
+                      {eventData && (
+                        <div className="event-file-badge metadata">
+                          📄 Metadata
+                        </div>
+                      )}
+                      {feedback && (
+                        <div className="event-file-badge feedback">
+                          💬 Feedback
+                        </div>
+                      )}
+                    </div>
+
+                    <details className="event-details">
+                      <summary>View all files ({groupFiles.length})</summary>
+                      <div className="file-list">
+                        {groupFiles.map(file => (
+                          <div key={file.key} className="file-item-compact">
+                            <span className="file-icon">{getFileIcon(file.type)}</span>
+                            <span className="file-name-compact">{file.key.split('/').pop()}</span>
+                            <span className="file-size-compact">{formatFileSize(file.size)}</span>
+                            <a
+                              href={`https://s3.console.aws.amazon.com/s3/object/ml-training-data-vision?prefix=${encodeURIComponent(file.key)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="file-link-compact"
+                            >
+                              View
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </main>
+    </div>
+  );
+}
+
+export default App;

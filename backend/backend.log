@@ -1,0 +1,450 @@
+
+> backend@1.0.0 start
+> node server.js
+
+[dotenv@17.2.3] injecting env (3) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Initializing database...
+🚪 Geoffrey backend running on http://localhost:3001
+Database initialized.
+Sync failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'BGP1VGNSFZNKVJDS',
+    extendedRequestId: '3FiXkuIWdIKXSRJdoyxOs1Nflc8Fm+xuyWnNVwjwvI5A8Cd139WkykhndnZPoT+RqEc5OfTHqEQ=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'BGP1VGNSFZNKVJDS',
+  HostId: '3FiXkuIWdIKXSRJdoyxOs1Nflc8Fm+xuyWnNVwjwvI5A8Cd139WkykhndnZPoT+RqEc5OfTHqEQ='
+}
+Error listing years: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'M8TJPCX516CJG2PD',
+    extendedRequestId: 'ueqnWvgJFZ5yg8XI4oYjQcD/+sLUpenMsEOFoCJ+n2DODjs5kIu4/mRG6J4vLPo43aCweQa89hN3q7rQGF6U9E407KraqcG7Hg0pk6CJpTk=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'M8TJPCX516CJG2PD',
+  HostId: 'ueqnWvgJFZ5yg8XI4oYjQcD/+sLUpenMsEOFoCJ+n2DODjs5kIu4/mRG6J4vLPo43aCweQa89hN3q7rQGF6U9E407KraqcG7Hg0pk6CJpTk='
+}
+Credentials validation failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'M8TTF3CR1SYDKV61',
+    extendedRequestId: 'Vnb0B1jUZyErZlfAaostgYh0YWCbBWat+LqgWYakBhFjgaAZ85hLld1HD/vPoe9K5hKP/0mhf5h5V9TQENI5OgCYpEI1UvU46Hrn7UjvVs8=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'M8TTF3CR1SYDKV61',
+  HostId: 'Vnb0B1jUZyErZlfAaostgYh0YWCbBWat+LqgWYakBhFjgaAZ85hLld1HD/vPoe9K5hKP/0mhf5h5V9TQENI5OgCYpEI1UvU46Hrn7UjvVs8='
+}
+Error listing years: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'M8TTQQ92KGTVP5NX',
+    extendedRequestId: 'wBQF+q7HoCc6YJt6YMfi+UPloWK6VzPh8yuN5kJktyqgAakdhirNpgAtjr0jQlYt7vD6X2UbR+tdG1vHfbzjsRRRVRPXA9ss+7IRqyvYcVE=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'M8TTQQ92KGTVP5NX',
+  HostId: 'wBQF+q7HoCc6YJt6YMfi+UPloWK6VzPh8yuN5kJktyqgAakdhirNpgAtjr0jQlYt7vD6X2UbR+tdG1vHfbzjsRRRVRPXA9ss+7IRqyvYcVE='
+}
+Credentials validation failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'M8TV7Y8ABXPJHYDT',
+    extendedRequestId: 'iFDrwjTR/vnlaYqKZlQhw444f6I6DVOEDi5HG8awVHzzg2FZHBsrSBpdJPTJUoCh2J6KJIPXYVRZAh2CnYehXMYlc/LuFXs1EEZ+ISzUjMk=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'M8TV7Y8ABXPJHYDT',
+  HostId: 'iFDrwjTR/vnlaYqKZlQhw444f6I6DVOEDi5HG8awVHzzg2FZHBsrSBpdJPTJUoCh2J6KJIPXYVRZAh2CnYehXMYlc/LuFXs1EEZ+ISzUjMk='
+}
+Error listing years: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'M8TJR22C431YFQVE',
+    extendedRequestId: 'oQOaY7a4rjw0co5lKY/TuQBzke2CWpGddr1V/feN6FNgwcUhmKXsRmsaBXa+yxoQrmtx5P0oaWcqa6rFd6OQEetkKAz5+OTSUovBvGBihas=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'M8TJR22C431YFQVE',
+  HostId: 'oQOaY7a4rjw0co5lKY/TuQBzke2CWpGddr1V/feN6FNgwcUhmKXsRmsaBXa+yxoQrmtx5P0oaWcqa6rFd6OQEetkKAz5+OTSUovBvGBihas='
+}
+Credentials validation failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'M8TZW39VDJPP1F1M',
+    extendedRequestId: 'b70jmcdvFG6yUQpZjDJv672oiqDWHsCsqVUxgpPBZnjesigz/odpNgz2hAVPBHxRrmKsRERh+f85oSLo81mEYdqsLpLoUD9sHPdPD5hkWDM=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'M8TZW39VDJPP1F1M',
+  HostId: 'b70jmcdvFG6yUQpZjDJv672oiqDWHsCsqVUxgpPBZnjesigz/odpNgz2hAVPBHxRrmKsRERh+f85oSLo81mEYdqsLpLoUD9sHPdPD5hkWDM='
+}
+Error listing years: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'M8TY18AXA3KK8RAK',
+    extendedRequestId: 'cu04B3wp/c+zIXZ1HUPLy1hHSNeVHqJUGs419+cRbJKEqDl5C/X+ss2Vmr9+T1p+ktZMTop/4hAoho73L0lxrLsgVQAmPJqix7ih3V6Q2pI=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'M8TY18AXA3KK8RAK',
+  HostId: 'cu04B3wp/c+zIXZ1HUPLy1hHSNeVHqJUGs419+cRbJKEqDl5C/X+ss2Vmr9+T1p+ktZMTop/4hAoho73L0lxrLsgVQAmPJqix7ih3V6Q2pI='
+}
+Credentials validation failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'V081MVPTRXWG3TDD',
+    extendedRequestId: 'WJZvo7OxbroE7RoDzbWheQq5VBlORnpDZH53j10FHO4LqebBE2iW5XWSHS/ViFo2Ww9f5C1YGfpNZ/QJLysuaKqfOfVCJ2GIDvDPy+7hUtc=',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'V081MVPTRXWG3TDD',
+  HostId: 'WJZvo7OxbroE7RoDzbWheQq5VBlORnpDZH53j10FHO4LqebBE2iW5XWSHS/ViFo2Ww9f5C1YGfpNZ/QJLysuaKqfOfVCJ2GIDvDPy+7hUtc='
+}
+Credentials validation failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'Z03GMK0WCZVNA0A0',
+    extendedRequestId: 'pGPpJhzRx0+Gn/4N4ZqnwHxXeNK141NH0/xP4yFM/eTIsgA4t29IPNl3xBsWA8ECTfS5ianiQISIp7jx5qQSw86+M1Brxv4B',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'Z03GMK0WCZVNA0A0',
+  HostId: 'pGPpJhzRx0+Gn/4N4ZqnwHxXeNK141NH0/xP4yFM/eTIsgA4t29IPNl3xBsWA8ECTfS5ianiQISIp7jx5qQSw86+M1Brxv4B'
+}
+Error listing years: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'Z03JWWCPAK4SVHSZ',
+    extendedRequestId: 'yw6cb6v4QxJCdMtMRKfGR98uN0uGOJ6POKVybR0Xgu61iv5DCfjSbe+7zwUeA1bbqBVHJoZMj2jYLNPu8G3/9qLnx18fzz3E',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'Z03JWWCPAK4SVHSZ',
+  HostId: 'yw6cb6v4QxJCdMtMRKfGR98uN0uGOJ6POKVybR0Xgu61iv5DCfjSbe+7zwUeA1bbqBVHJoZMj2jYLNPu8G3/9qLnx18fzz3E'
+}
+Credentials validation failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'Z03WF3PWDPQ2K4GJ',
+    extendedRequestId: 'fKU7GWK+h5XW67mhZhv6LjX9orxKwRadvVVyAT33bA7zfUnznT63hGFHmliD5Oan+D5DukNOQcGMjE6DNdgYBqUocvVIMOW6',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'Z03WF3PWDPQ2K4GJ',
+  HostId: 'fKU7GWK+h5XW67mhZhv6LjX9orxKwRadvVVyAT33bA7zfUnznT63hGFHmliD5Oan+D5DukNOQcGMjE6DNdgYBqUocvVIMOW6'
+}
+Error listing years: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'Z03PFQXSWGMSTK6F',
+    extendedRequestId: 'vwBHaQ0pf7Z9oHOQ63I9SZAPbIt1uICFDbL4bj8xhu3FFoX3Wy4hNpxX1wpmtGYWehyBIozfOjjipKMnKutEW/Mdd4NzDjRh',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'Z03PFQXSWGMSTK6F',
+  HostId: 'vwBHaQ0pf7Z9oHOQ63I9SZAPbIt1uICFDbL4bj8xhu3FFoX3Wy4hNpxX1wpmtGYWehyBIozfOjjipKMnKutEW/Mdd4NzDjRh'
+}
+Error listing years: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'Z03TJDE8TA9RTXR1',
+    extendedRequestId: '5s9X0JfQLoecXKSx4XVk2fESjf+pJucq1Z0+6GyZRJ6Oxdq8PupbuBCKSAve0S9Fj+CMLAC1mpf9BPILmMzt32YoXQ8F1Apc',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'Z03TJDE8TA9RTXR1',
+  HostId: '5s9X0JfQLoecXKSx4XVk2fESjf+pJucq1Z0+6GyZRJ6Oxdq8PupbuBCKSAve0S9Fj+CMLAC1mpf9BPILmMzt32YoXQ8F1Apc'
+}
+Credentials validation failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'Z03YNE545N4JRSYM',
+    extendedRequestId: 'NdSu6EhuQf6pnkAEzBWTSCdcjtj6tYS8IfPjc9PQ+YB7xVGtaxTv9KDvVIoiNrV3a+bETE3PiVsMDdAxVaWQixOJUkED6TVn',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'Z03YNE545N4JRSYM',
+  HostId: 'NdSu6EhuQf6pnkAEzBWTSCdcjtj6tYS8IfPjc9PQ+YB7xVGtaxTv9KDvVIoiNrV3a+bETE3PiVsMDdAxVaWQixOJUkED6TVn'
+}
+Error listing years: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'X6MDMWQTZXRFX3KK',
+    extendedRequestId: 'cjNX4TLmXMUyWlUtsi5dkMeundxhINg6MaqIOTKfvt265GGdxrI5C7KPCxs/jJ2LYHH+HJk5OEg3Ch/qc2K8HmOXg10j2cE0',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'X6MDMWQTZXRFX3KK',
+  HostId: 'cjNX4TLmXMUyWlUtsi5dkMeundxhINg6MaqIOTKfvt265GGdxrI5C7KPCxs/jJ2LYHH+HJk5OEg3Ch/qc2K8HmOXg10j2cE0'
+}
+Credentials validation failed: ExpiredToken: The provided token has expired.
+    at ProtocolLib.getErrorSchemaOrThrowBaseException (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:69:67)
+    at AwsRestXmlProtocol.handleError (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/core/dist-cjs/submodules/protocols/index.js:1610:65)
+    at AwsRestXmlProtocol.deserializeResponse (/Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/protocols/index.js:301:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/core/dist-cjs/submodules/schema/index.js:26:24
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:386:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@smithy/middleware-retry/dist-cjs/index.js:254:46
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:63:28
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js:90:20
+    at async /Users/schlaefers/Desktop/Chamberlain/Geoffrey/backend/node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js:5:26 {
+  '$fault': 'client',
+  '$retryable': undefined,
+  '$metadata': {
+    httpStatusCode: 400,
+    requestId: 'X6M84B51M0W4D8TC',
+    extendedRequestId: '1zyLQnAxXjtjsPpgUuapWzebMtNcQEAwZKVnFxwo1h0wxv73RIvqHDqhQBIfagAerjFPYWGkJ/507BoKEWpAg49fwjzYccRx',
+    cfId: undefined,
+    attempts: 1,
+    totalRetryDelay: 0
+  },
+  Code: 'ExpiredToken',
+  'Token-0': 'IQoJb3JpZ2luX2VjEJT//////////wEaCXVzLWVhc3QtMSJGMEQCIBdh/pB8drvEh94p02BqHF8oIf4SGjBa5kikEvQ3mIeDAiBLCCnkiVNndmv8Q4MYG0Rn51+j8/UMx4vgXW9lzStkiCqUAwhdEAEaDDMyNTY2NDg4MDQzOSIM9y020Ci1jSz+OzF9KvECXnX00ReoKZLIsEcY9ZXpUAy/VfZ41WHzClPpZYjcoP8DEHm/e0N3sfVPlbPP9DsIeyWi/pg0IUyi9bfcpvGptaK6p5IJYQwQEMMR38t7K8oACbAOyvQP1ETVpo7lhiZaRV0ijgou45hPVSr07Ex8Dnp9lRzOt0mBh0MXPjWgbOrhiLo/v5Tukji5aaNjLYbeUJLRRVMGeycPDukrJEMr/1VZ8/9/onE2MSnIhZFyMxKWD/fcQ+OY28C5LOS84nlmCycu9/43FaSonItFabcXzGtYS9kUE2zJr0n0lX6Mbw5iRXFasyGWaVyp9YalvBjyUvnzHnnQcp7XViKswGlJ+VxeH2dXMLXZGUul++B7LilDtAUjvogAGXMMqeQa8p+PP64Uj0L87HAf/0Ymew4v8G8EGDSyjPzmv3fdmISTStxXksDCoQxQdfBECWRn6FV1PVvvbk5lSFSSiVNYy5h5FvyXOUa63YiGApgWg36/2YK0MLrqkskGOqUB9e/z72lfL9S4TZ6neb3J4HJ4mnhE/3pSnGpl8e2c8rJtjoN2me8ME1EDWdWLOM6IfITPk9E1LHM++oB923NAI/1bgeBu2lu/48mnmKAnSkieH/AdWC+ALiZcSIt3GJzxv7kFYlIOxYRZY9BV2jEFntWfhtYgc4iy10UuHpJdQKg5PsD+PxTeOc1mZyE1+yo3Jb/a/3GjNyPOI0hF4fE5I4UDoxDp',
+  RequestId: 'X6M84B51M0W4D8TC',
+  HostId: '1zyLQnAxXjtjsPpgUuapWzebMtNcQEAwZKVnFxwo1h0wxv73RIvqHDqhQBIfagAerjFPYWGkJ/507BoKEWpAg49fwjzYccRx'
+}
