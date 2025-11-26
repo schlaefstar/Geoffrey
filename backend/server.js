@@ -23,9 +23,6 @@ process.on('unhandledRejection', (reason, promise) => {
     console.error('UNHANDLED REJECTION:', reason);
 });
 
-// Keep process alive
-setInterval(() => { }, 10000);
-
 const {
     initDB,
     upsertEvent,
@@ -235,16 +232,21 @@ app.get('/api/sync/status', async (req, res) => {
 
 // List years
 app.get('/api/years', async (req, res) => {
+    console.log('📥 /api/years request received');
     try {
+        console.log('Creating S3 command...');
         const command = new ListObjectsV2Command({
             Bucket: BUCKET_NAME,
             Prefix: BASE_PREFIX,
             Delimiter: '/',
         });
 
+        console.log('Sending S3 request...');
         const response = await getS3Client().send(command);
+        console.log('S3 response received');
 
         if (!response.CommonPrefixes) {
+            console.log('No common prefixes found');
             return res.json([]);
         }
 
@@ -253,9 +255,13 @@ app.get('/api/years', async (req, res) => {
             .filter(Boolean)
             .sort((a, b) => parseInt(b) - parseInt(a));
 
+        console.log('✅ Returning years:', years);
         res.json(years);
     } catch (error) {
-        console.error('Error listing years:', error);
+        console.error('❌ Error listing years:', error);
+        console.error('Error name:', error.name);
+        console.error('Error message:', error.message);
+        console.error('Error stack:', error.stack);
         res.status(500).json({ error: error.message });
     }
 });
