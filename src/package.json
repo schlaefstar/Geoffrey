@@ -1,0 +1,16 @@
+{
+  "name": "geoffrey",
+  "version": "1.0.0",
+  "description": "Geoffrey - Simple S3 Video Browser",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "sync": "node sync.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.937.0",
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}

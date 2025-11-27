@@ -1,8 +1,25 @@
-node_modules
-.DS_Store
+# Dependencies
+node_modules/
+
+# Environment variables (contains AWS credentials)
 .env
-.env.local
-.env.*.local
-dist
-dist-ssr
-*.local
+*.env
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+backend/pgdata/
+src/data/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
